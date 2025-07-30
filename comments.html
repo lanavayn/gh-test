@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leave a Comment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Leave a Comment or Question</h1>
+    <form id="commentForm">
+      <input type="text" name="name" placeholder="Your name" required />
+      <textarea name="comment" placeholder="Your comment or question..." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="comments-display"></div>
+
+    <!-- Back to verse page -->
+    <div style="margin-top: 2em;">
+      <a href="index.html">⬅️ Back to Verse</a>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("commentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = this.name.value;
+      const comment = this.comment.value;
+      const output = `<p><strong>${name}:</strong> ${comment}</p>`;
+      document.getElementById("comments-display").innerHTML += output;
+      this.reset();
+    });
+  </script>
+  <script src="feedback.js"></script>
+</body>
+</html>
