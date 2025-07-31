@@ -12,7 +12,8 @@ function sendFeedback(site, page, feedback) {
   })
   .then(response => response.json())
   .then(data => {
-    console.log("Feedback submitted:", data);
+     console.log('Success:', data);
+    document.getElementById("rating-result").textContent = "Thank you! Feedback sent.";
   })
   .catch(error => {
     console.error("Error submitting feedback:", error);

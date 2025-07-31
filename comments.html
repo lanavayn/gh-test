@@ -7,31 +7,40 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main>
-    <h1>Leave a Comment or Question</h1>
-    <form id="commentForm">
-      <input type="text" name="name" placeholder="Your name" required />
-      <textarea name="comment" placeholder="Your comment or question..." required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-    <div id="comments-display"></div>
+<form name="feedback-comments" method="POST" data-netlify="true">
+    <input type="hidden" name="site" value="lana-bible" />
+    <input type="hidden" name="page" value="index" />
+    <input type="hidden" id="feedbackType" name="feedback" value="" />
+    <input type="hidden" name="form-name" value="feedback-comments" />
+    <p style="display:none">
+    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    </p>
 
-    <!-- Back to verse page -->
-    <div style="margin-top: 2em;">
-      <a href="index.html">⬅️ Back to Verse</a>
-    </div>
-  </main>
+  <label>
+    Your Name:
+    <input type="text" name="name" required />
+  </label>
 
-  <script>
-    document.getElementById("commentForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const name = this.name.value;
-      const comment = this.comment.value;
-      const output = `<p><strong>${name}:</strong> ${comment}</p>`;
-      document.getElementById("comments-display").innerHTML += output;
-      this.reset();
-    });
-  </script>
-  <script src="feedback.js"></script>
+  <label>
+    Your Comment or Question:
+    <textarea name="message" placeholder="Leave a comment or question..." required></textarea>
+  </label>
+
+  <div>
+    Was this helpful?
+    <button type="button" onclick="setFeedback('👍')">👍</button>
+    <button type="button" onclick="setFeedback('👎')">👎</button>
+  </div>
+
+  <button type="submit">Send</button>
+</form>
+
+<script>
+function setFeedback(value) {
+  document.getElementById('feedbackType').value = value;
+  document.getElementById('selected-feedback').textContent = `Selected: ${value}`;
+}
+</script>
+
 </body>
 </html>
