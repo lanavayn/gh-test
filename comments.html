@@ -3,53 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Leave a Comment or Feedback</title>
+  <title>Leave a Comment</title>
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 2rem;
+    .emoji-buttons {
+      display: flex;
+      gap: 1em;
+      font-size: 2rem;
+      cursor: pointer;
     }
-    label {
-      display: block;
-      margin-top: 1rem;
+
+    .emoji-label {
+      user-select: none;
     }
-    textarea {
-      width: 100%;
-      height: 100px;
+
+    /* Hide the actual radio buttons */
+    .emoji-radio {
+      display: none;
     }
-    .thumbs {
-      margin-top: 1rem;
-    }
-    .thumbs label {
-      margin-right: 1rem;
-    }
-    button {
-      margin-top: 1.5rem;
-      padding: 0.5rem 1rem;
+
+    /* Optional: style selected emoji */
+    .emoji-radio:checked + .emoji-label {
+      border: 2px solid #333;
+      border-radius: 8px;
+      padding: 0.2em;
     }
   </style>
 </head>
 <body>
-  <h1>Leave a Comment or Feedback</h1>
+  <h2>Leave a Comment or Question</h2>
 
-  <form name="feedback" method="POST" data-netlify="true">
+  <form name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="feedback" />
+    <p hidden>
+      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    </p>
 
-    <label for="comment">Your Comment or Question:</label>
-    <textarea id="comment" name="comment" placeholder="Type your comment here..."></textarea>
+    <!-- Comment Section -->
+    <label for="comment">Your Comment or Question:</label><br>
+    <textarea id="comment" name="comment" rows="5" cols="50" required></textarea><br><br>
 
-    <div class="thumbs">
-      <label>
-        <input type="radio" name="feedback-type" value="👍" />
-        👍
-      </label>
-      <label>
-        <input type="radio" name="feedback-type" value="👎" />
-        👎
-      </label>
-    </div>
+    <!-- Hidden Radios + Emoji -->
+    <label>Was this helpful?</label><br>
+    <div class="emoji-buttons">
+      <input type="radio" id="thumbs-up" name="feedback" value="👍" class="emoji-radio" required>
+      <label for="thumbs-up" class="emoji-label">👍</label>
+
+      <input type="radio" id="thumbs-down" name="feedback" value="👎" class="emoji-radio">
+      <label for="thumbs-down" class="emoji-label">👎</label>
+    </div><br>
 
     <button type="submit">Submit</button>
   </form>
+
+  <p><a href="index.html">← Back to Main Page</a></p>
 </body>
 </html>
