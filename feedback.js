@@ -1,5 +1,5 @@
 function sendFeedback(site, page, feedback) {
-  fetch("https://script.google.com/macros/s/AKfycbwuu0yyjZvKnk8UOS6H3_4J7O-6SvgDjBcrmUZK8bGZEHHoOewMELACFh_JIxWWIoO4Ug/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxqh7-ShZqd_360YlvC2P9ZMZFeSc6hrRIgFK3hP7ajysxrLUYVJkelDt7J7BhEcn3QlA/exec", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
