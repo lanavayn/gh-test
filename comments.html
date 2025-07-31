@@ -5,32 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Leave a Comment</title>
   <style>
-    .emoji-buttons {
-      display: flex;
-      gap: 1em;
-      font-size: 2rem;
-      cursor: pointer;
-    }
 
-    .emoji-label {
-      user-select: none;
-    }
-
-    /* Hide the actual radio buttons */
-    .emoji-radio {
-      display: none;
-    }
-
-    /* Optional: style selected emoji */
-    .emoji-radio:checked + .emoji-label {
-      border: 2px solid #333;
-      border-radius: 8px;
-      padding: 0.2em;
-    }
   </style>
 </head>
 <body>
-  <h2>Leave a Comment or Question</h2>
+
+  <header>
+    <h1>📝 Your Comment or Question</h1>
+  </header>
+
+  <section class="testimonial-form">
 
   <form name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <input type="hidden" name="form-name" value="feedback" />
@@ -47,10 +31,10 @@
 
       <div class="form-group">
         <label for="message">Your Comment or Question:</label>
-        <textarea id="message" name="testimonial" rows="4" required></textarea>
+        <textarea id="comment" name="comment" rows="4" required></textarea>
       </div>
     <label for="comment">Your Comment or Question:</label><br>
-    <textarea id="comment" name="comment" rows="5" cols="50" required></textarea><br><br>
+    <!-- <textarea id="comment" name="comment" rows="5" cols="50" required></textarea><br><br> -->
 
     <!-- Hidden Radios + Emoji -->
     <label>Was this helpful?</label><br>
@@ -64,6 +48,15 @@
 
     <button type="submit">Submit</button>
   </form>
+
+    <div id="confirmation" style="display:none; margin-top: 20px; font-weight: bold; color: green;">
+      🎉 Thank you for your testimonial!
+    </div>
+        <div id="confirmation" style="display:none; margin-top: 20px; font-weight: bold; color: green;">
+      🎉 Thank you for your testimonial!
+    </div>
+  </section>
+
 
   <p><a href="index.html">← Back to Main Page</a></p>
 </body>

@@ -67,3 +67,71 @@ button:hover {
   font-style: italic;
   color: #333;
 }
+/* Testimonials */
+.testimonial-form {
+  background-color: #fff8f0;
+  padding: 30px 20px;
+  border-top: 2px solid #ffb347;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.testimonial-form h3 {
+  font-size: 1.5em;
+  color: #ff8c42;
+  margin-bottom: 20px;
+}
+
+.testimonial-form form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.testimonial-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.testimonial-form input,
+.testimonial-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.testimonial-form button {
+  background-color: #ff8c42;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+}
+    .emoji-buttons {
+      display: flex;
+      gap: 1em;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .emoji-label {
+      user-select: none;
+    }
+
+    /* Hide the actual radio buttons */
+    .emoji-radio {
+      display: none;
+    }
+
+    /* Optional: style selected emoji */
+    .emoji-radio:checked + .emoji-label {
+      border: 2px solid #333;
+      border-radius: 8px;
+      padding: 0.2em;
+    }
