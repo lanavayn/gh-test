@@ -58,96 +58,17 @@
       toggleBtn.textContent = isVisible ? 'Показать больше' : 'Скрыть';
     }
   </script>
-  <style>
-  .popup {
-    display: none;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    background-color: white;
-    border: 2px solid #888;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    z-index: 1000;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    max-height: 70vh;
-    overflow: auto;
-  }
-
-    #overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-    }
-    .popup h2 {
-      color: darkblue;
-      margin-bottom: 10px;
-    }
-    .popup p {
-      margin-bottom: 10px;
-    }
-    .popup-buttons a {
-      display: inline-block;
-      padding: 6px 12px;
-      background-color: darkgreen;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-left: 10px;
-    }
-
-    .popup-buttons a:hover {
-      background-color: green;
-    }
-    .popup-buttons button,
-    .popup-buttons a {
-      display: inline-block;
-      padding: 8px 16px;
-      background-color: darkgreen;
-      color: white;
-      text-decoration: none;
-      border: none;
-      border-radius: 5px;
-      margin: 5px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .popup-buttons button:hover,
-    .popup-buttons a:hover {
-      background-color: green;
-    }
-  </style>
+ 
 </head>
 <body>
   <div class="container">
-
-<div class="top-bar">
-      <a href="index.html">🏠 Главная</a>
-      <a href="about.html">📄 О сайте</a>
-      <button onclick="sharePage()" class="icon-button" title="Поделиться">
-        <img src="https://cdn-icons-png.flaticon.com/128/786/786205.png" alt="Поделиться" width="24" height="24">
-      </button>
-  <div class="dropdown">
-    <button class="dropbtn">🌐 Language</button>
-    <div class="dropdown-content">
-      <a href="10-commandments-en.html">English</a>
-      <a href="10-commandments.html">Русский</a>
-    </div>
-  </div>
-</div>
+    <div id="header"></div>
    
     <h1>📜 10 Заповедей — с Толкованием</h1>
 
     <div style="background: #fff8e1; border-left: 4px solid #ffcc00; padding: 10px 15px; margin-bottom: 20px; border-radius: 5px;">
-  📖 Нажмите на <strong>название стиха</strong>, чтобы увидеть толкование или открыть в Библии.
+      📖 Нажмите на <strong>название стиха</strong>, чтобы увидеть толкование или открыть в Библии.
     </div>
-
     <ol>
       <div class="verse">
         <li>
@@ -155,8 +76,7 @@
           да не будет у тебя других богов пред лицем Моим.  
           <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment1')">Исход 20:2-3</a> 
         </li>
-      </div>
-      
+      </div>    
       <br>
       <li>
         Не делай себе кумира и никакого изображения того, что на небе вверху, и что на земле внизу, и что в воде ниже земли; не поклоняйся им и не служи им, ибо Я Господь, Бог твой, Бог ревнитель, наказывающий детей за вину отцов до третьего и четвёртого рода, ненавидящих Меня, и творящий милость до тысячи родов любящим Меня и соблюдающим заповеди Мои
@@ -185,7 +105,7 @@
        <br>
       <li> 
           Не прелюбодействуй.
-           <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment7')"">Исход 20:14</a>
+           <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment7')">Исход 20:14</a>
       </li>
        <br>
       <li>
@@ -202,18 +122,10 @@
 	        Не желай дома ближнего твоего; не желай жены ближнего твоего, ни раба его, ни рабыни его, ни вола его, ни осла его, ни всего, что есть у ближнего твоего. 
           <a style="cursor:pointer; color:darkblue;" onclick="openPopup('popup-commandment10')">Исход 20:17</a></li>
     </ol>
-
-    <footer class="footer">
-      <div class="source-note">
-        <p><strong>📚 Источники:</strong></p>
-        <p>🔹 Толкования основаны на классических христианских комментариях (Иоанн Златоуст, Matthew Henry, John Gill и др.).</p>
-        <p class="bible-link-note">🔹 Ссылки на тексты Библии: <a href="https://bible.by/syn/" target="_blank">bible.by/syn</a> — Синодальный перевод, Российское Библейское Общество, 1876 г.</p>
-      </div>
-      © 2025 10 Заповедей — с Толкованием. Все права защищены.
-    </footer>
-
     <div id="overlay" onclick="document.querySelectorAll('.popup').forEach(p => p.style.display='none'); this.style.display='none';"></div>
-
+    <footer class="footer">
+      <div id="footer"></div>
+    </footer>
     <!-- Popup толкование -->
     <div id="popup-commandment1" class="popup">
       <h3>Первая заповедь — Толкование</h3>
@@ -317,25 +229,13 @@
     </div>
 
   </div>
-  
-  <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
-      <img src="images/up-arrow.png" alt="Back to top" />
-  </button>
-  <script src="scroll.js"></script>
 
-  <script>
-      function sharePage() {
-      if (navigator.share) {
-        navigator.share({
-          title: document.title,
-          text: "Check out this verse:",
-          url: window.location.href
-        });
-      } else {
-        alert("Sharing not supported. You can copy the URL.");
-      }
-    }
-  </script>
-  
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
+      <img src="images/up-arrow.png" alt="Back to top" />
+    </button>
+    <script src="js/scroll.js"></script>
+    <script src="js/header-inner-ru.js"></script>
+    <script src="js/footer-ru.js"></script>
+    <script src="js/share.js" defer></script>
 </body>
 </html>
