@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave a Testimonial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📝 Leave a Testimonial for Sofia</h1>
+  </header>
+
+  <section class="testimonial-form">
+    <form name="testimonial" method="POST" data-netlify="true" honeypot="bot-field" onsubmit="showConfirmation(event)">
+      <input type="hidden" name="form-name" value="testimonial">
+
+      <p style="display:none">
+        <label>Don’t fill this out: <input name="bot-field"></label>
+      </p>
+
+      <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Testimonial:</label>
+        <textarea id="message" name="testimonial" rows="4" required></textarea>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="confirmation" style="display:none; margin-top: 20px; font-weight: bold; color: green;">
+      🎉 Thank you for your testimonial!
+    </div>
+  </section>
+
+  <footer>
+    <p><a href="index.html">← Back to Home</a></p>
+  </footer>
+
+  <script>
+    function showConfirmation(event) {
+      event.preventDefault();
+      const form = event.target;
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+      .then(() => {
+        form.style.display = "none";
+        document.getElementById("confirmation").style.display = "block";
+      })
+      .catch((error) => alert("Submission failed. Please try again."));
+    }
+  </script>
+</body>
+</html>
