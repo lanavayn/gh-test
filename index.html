@@ -72,7 +72,7 @@
     const languageSwitcher = document.getElementById('languageSwitcher');
     const shareBtn = document.getElementById('shareBtn');
 
-    // Раскрытие меню
+    // Показать/скрыть меню
     burgerToggle?.addEventListener('click', () => {
       if (burgerMenu) {
         burgerMenu.style.display = burgerMenu.style.display === 'block' ? 'none' : 'block';
@@ -86,7 +86,7 @@
       }
     });
 
-    // Поделиться
+    // Кнопка Share
     shareBtn?.addEventListener('click', function (e) {
       e.preventDefault();
       if (navigator.share) {
@@ -99,7 +99,7 @@
       }
     });
 
-    // Закрытие меню при клике вне
+    // Закрытие меню при клике вне его
     document.addEventListener('click', function (e) {
       if (
         !burgerMenu.contains(e.target) &&
@@ -110,6 +110,7 @@
     });
   });
 </script>
+
 
 
     <script src="js/scroll.js"></script>
