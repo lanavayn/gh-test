@@ -90,17 +90,45 @@
     const burgerMenu = document.getElementById('burgerMenu');
     const languageSwitcher = document.getElementById('languageSwitcher');
     const shareBtn = document.getElementById('shareBtn');
+    const menuLinks = document.getElementById('menuLinks');
 
+    // Показ и скрытие меню
     burgerToggle?.addEventListener('click', () => {
       burgerMenu.style.display = burgerMenu.style.display === 'block' ? 'none' : 'block';
     });
 
-    languageSwitcher?.addEventListener('change', function () {
-      if (this.value) {
-        window.location.href = this.value;
-      }
-    });
+    // Показываем нужные ссылки в меню
+    if (menuLinks) {
+      const currentPage = window.location.pathname;
+      const isHome = currentPage.endsWith("index.html") || currentPage.endsWith("index-en.html");
 
+      if (isHome) {
+        menuLinks.innerHTML = `<a href="about.html">📘 About</a>`;
+      } else {
+        menuLinks.innerHTML = `
+          <a href="index.html">← Back</a>
+          <a href="about.html">📘 About</a>
+        `;
+      }
+    }
+
+    // Переключатель языка
+    if (languageSwitcher) {
+      const currentPage = window.location.pathname;
+      [...languageSwitcher.options].forEach(option => {
+        if (currentPage.includes(option.value)) {
+          option.selected = true;
+        }
+      });
+
+      languageSwitcher.addEventListener('change', function () {
+        if (this.value && !currentPage.includes(this.value)) {
+          window.location.href = this.value;
+        }
+      });
+    }
+
+    // Share
     shareBtn?.addEventListener('click', function (e) {
       e.preventDefault();
       if (navigator.share) {
@@ -113,6 +141,7 @@
       }
     });
 
+    // Закрытие меню при клике вне его
     document.addEventListener('click', function (e) {
       if (
         !burgerMenu.contains(e.target) &&
@@ -122,6 +151,13 @@
       }
     });
   });
+</script>
+<script>
+  fetch("menu.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
 </script>
 
     <script src="js/scroll.js"></script>
