@@ -43,7 +43,26 @@
 
 </head>
 <body>
-  <div id="header"></div> <!-- вне контейнера -->
+<!-- НАЧАЛО ХЕДЕРА -->
+<header class="header-bar">
+  <div class="header-left">
+    <button id="burgerToggle">☰</button>
+  </div>
+  <div class="header-right">
+    <select id="languageSwitcher">
+      <option value="index-en.html">English</option>
+      <option value="index.html">Русский</option>
+    </select>
+  </div>
+
+  <div id="burgerMenu" class="burger-menu">
+    <a href="index.html">← Back / About</a>
+    <a href="#" id="shareBtn">📤 Share</a>
+  </div>
+</header>
+
+<!-- КОНЕЦ ХЕДЕРА -->
+
     <div class="container" style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
         <main role="main"> 
           <h1>📖 <span class="highlight-title">Библия для всех</span> — главная</h1>
@@ -72,21 +91,16 @@
     const languageSwitcher = document.getElementById('languageSwitcher');
     const shareBtn = document.getElementById('shareBtn');
 
-    // Показать/скрыть меню
     burgerToggle?.addEventListener('click', () => {
-      if (burgerMenu) {
-        burgerMenu.style.display = burgerMenu.style.display === 'block' ? 'none' : 'block';
-      }
+      burgerMenu.style.display = burgerMenu.style.display === 'block' ? 'none' : 'block';
     });
 
-    // Переключение языка
     languageSwitcher?.addEventListener('change', function () {
       if (this.value) {
         window.location.href = this.value;
       }
     });
 
-    // Кнопка Share
     shareBtn?.addEventListener('click', function (e) {
       e.preventDefault();
       if (navigator.share) {
@@ -95,11 +109,10 @@
           url: window.location.href
         }).catch(console.error);
       } else {
-        alert("Sharing is not supported on this browser.");
+        alert(\"Sharing is not supported on this browser.\");
       }
     });
 
-    // Закрытие меню при клике вне его
     document.addEventListener('click', function (e) {
       if (
         !burgerMenu.contains(e.target) &&
@@ -110,8 +123,6 @@
     });
   });
 </script>
-
-
 
     <script src="js/scroll.js"></script>
     <script src="js/footer-ru.js"></script>

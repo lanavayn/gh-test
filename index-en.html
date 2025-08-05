@@ -65,28 +65,23 @@
     <img src="images/up-arrow.png" alt="Back to top" />
   </button>
 
-  <script>
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     const burgerToggle = document.getElementById('burgerToggle');
     const burgerMenu = document.getElementById('burgerMenu');
     const languageSwitcher = document.getElementById('languageSwitcher');
     const shareBtn = document.getElementById('shareBtn');
 
-    // Показать/скрыть меню
     burgerToggle?.addEventListener('click', () => {
-      if (burgerMenu) {
-        burgerMenu.style.display = burgerMenu.style.display === 'block' ? 'none' : 'block';
-      }
+      burgerMenu.style.display = burgerMenu.style.display === 'block' ? 'none' : 'block';
     });
 
-    // Переключение языка
     languageSwitcher?.addEventListener('change', function () {
       if (this.value) {
         window.location.href = this.value;
       }
     });
 
-    // Кнопка Share
     shareBtn?.addEventListener('click', function (e) {
       e.preventDefault();
       if (navigator.share) {
@@ -95,11 +90,10 @@
           url: window.location.href
         }).catch(console.error);
       } else {
-        alert("Sharing is not supported on this browser.");
+        alert(\"Sharing is not supported on this browser.\");
       }
     });
 
-    // Закрытие меню при клике вне его
     document.addEventListener('click', function (e) {
       if (
         !burgerMenu.contains(e.target) &&

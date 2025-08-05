@@ -495,16 +495,6 @@ transform: translateX(-50%);
       padding: 10px 18px;
       font-size: 1em;
     }
-    .header-bar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #fffbe9;
-  padding: 10px 16px;
-  border-bottom: 1px solid #ccc;
-  position: relative;
-  z-index: 100;
-}
 
 .header-right {
   display: flex;
@@ -520,25 +510,6 @@ transform: translateX(-50%);
   padding: 4px 8px;
 }
 
-.burger-menu {
-  display: none;
-  position: absolute;
-  right: 1em;
-  top: 3.2em;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  z-index: 1000;
-  min-width: 160px;
-}
-
-.burger-menu a {
-  display: block;
-  padding: 0.6em 1em;
-  text-decoration: none;
-  color: #333;
-}
 
 .burger-menu a:hover {
   background-color: #f0f0f0;
