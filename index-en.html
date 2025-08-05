@@ -65,41 +65,52 @@
     <img src="images/up-arrow.png" alt="Back to top" />
   </button>
 
-    <script>
-      fetch('menu.html')
-        .then(res => res.text())
-        .then(html => {
-          const headerDiv = document.getElementById('header');
-          if (headerDiv) {
-            headerDiv.innerHTML = html;
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const burgerToggle = document.getElementById('burgerToggle');
+      const burgerMenu = document.getElementById('burgerMenu');
+      const languageSwitcher = document.getElementById('languageSwitcher');
+      const shareBtn = document.getElementById('shareBtn');
 
-            // ✅ Теперь элементы точно на странице — можно назначать обработчики
-            const button = document.querySelector('.burger-button');
-            const menu = document.getElementById('burgerMenu');
+      // Раскрытие меню
+      burgerToggle?.addEventListener('click', () => {
+        if (burgerMenu) {
+          burgerMenu.style.display = burgerMenu.style.display === 'block' ? 'none' : 'block';
+        }
+      });
 
-            function toggleMenu() {
-              if (!menu) return;
-              menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-            }
+      // Переключение языка
+      languageSwitcher?.addEventListener('change', function () {
+        if (this.value) {
+          window.location.href = this.value;
+        }
+      });
 
-            if (button) {
-              button.addEventListener('click', toggleMenu);
-            }
+      // Поделиться
+      shareBtn?.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (navigator.share) {
+          navigator.share({
+            title: document.title,
+            url: window.location.href
+          }).catch(console.error);
+        } else {
+          alert("Sharing is not supported on this browser.");
+        }
+      });
 
-            document.addEventListener('click', function (e) {
-              if (!menu || !button) return;
-              if (!menu.contains(e.target) && !button.contains(e.target)) {
-                menu.style.display = 'none';
-              }
-            });
+      // Закрытие меню при клике вне
+      document.addEventListener('click', function (e) {
+        if (
+          !burgerMenu.contains(e.target) &&
+          !burgerToggle.contains(e.target)
+        ) {
+          burgerMenu.style.display = 'none';
+        }
+      });
+    });
+  </script>
 
-            // ✅ Переключение языка
-            window.changeLanguage = function(url) {
-              window.location.href = url;
-            };
-          }
-        });
-    </script>
 
 
   <script src="js/footer-en.js"></script>
