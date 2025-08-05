@@ -1,0 +1,35 @@
+<header class="header-bar">
+  <div class="header-right">
+    <div class="language-dropdown">
+      <select onchange="window.location.href=this.value">
+        <option value="index-en.html">English</option>
+        <option value="index.html">Русский</option>
+      </select>
+    </div>
+
+    <button class="burger-button">☰</button>
+    <div class="burger-menu" id="burgerMenu">
+      <a href="index.html">← Back / About</a>
+      <a href="#" class="share-button">📤 Share</a>
+    </div>
+  </div>
+
+  <script>
+    // Назначаем обработчик после загрузки HTML
+    const burgerButton = document.querySelector('.burger-button');
+    const burgerMenu = document.getElementById('burgerMenu');
+
+    if (burgerButton && burgerMenu) {
+      burgerButton.addEventListener('click', () => {
+        burgerMenu.style.display = burgerMenu.style.display === 'block' ? 'none' : 'block';
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!burgerMenu.contains(e.target) && !burgerButton.contains(e.target)) {
+          burgerMenu.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</header>
+

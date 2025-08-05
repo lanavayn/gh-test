@@ -1,229 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sofia's Dog Sitting Service</title>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K74LJWQPLX"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LM7CCJ5HKX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    gtag('config', 'G-K74LJWQPLX');
+    gtag('config', 'G-LM7CCJ5HKX');
   </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ Added -->
+  <title>Библия для всех</title>
+  <!-- ✅ SEO Meta Tags -->
+    <meta name="description" content="Bible for All — inspirational verses with commentary. Available in English and Russian.">
+    <meta name="keywords" content="Bible, Scripture, Golden Verses, Christianity, Russian Bible, English Bible">
+    <meta name="author" content="Lana Vayner">
 
-    <!-- ✅ SEO Meta Tags -->
-    <meta name="description" content="Loving and reliable small dog sitting services in Tiny, Bluewater Beach area. Sofia provides home-based care, flexible options, and in-home visits for your furry friends." />
-    <meta name="keywords" content="dog sitting, small dog care, Tiny Ontario, Bluewater Beach, pet sitting, in-home dog care, Sofia Roginsky, dog sitter, Lana Vayner" />
-    <meta name="author" content="Lana Vayner" />
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="images/favicon.png" sizes="192x192" />
 
-      <link rel="stylesheet" href="style.css" />
-      <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-  </head>
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Bible for All" />
+    <meta property="og:description" content="Inspirational verses with commentary. Available in English and Russian." />
+    <meta property="og:image" content="https://bibleforall.ca/og-image.png" />
+    <meta property="og:url" content="https://bibleforall.ca/" />
+    <meta property="og:type" content="website" />
+    <!-- Canonical -->
+    <link rel="canonical" href="https://bibleforall.ca/" />
 
-  <body id="top">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-  <header>
+    <!-- Mobile theme color -->
+    <meta name="theme-color" content="#ffffff" />
 
-      <div class="header-top container">
-        <div class="header-left">
-          <div class="header-content">
-            <img src="images/dog0.jpg" alt="Cute Dog" class="header-img">
-            <h1>Welcome to Sofia's Dog Sitting Service</h1>
-          </div>
-          <p>Loving care for your small dogs in Tiny 🐶</p>
-        </div>
-        <div class="header-share">
-          <button onclick="shareSite()">📤 Share</button>
-        </div>
-      </div>
+</head>
+<body>
+  <div id="header"></div> <!-- вне контейнера -->
+    <div class="container" style="background-color: #fff9e6; padding: 1em 1.5em; border-radius: 10px; border: 1px solid #eedfb8; margin-top: 1em; box-shadow: 0 0 5px rgba(0,0,0,0.05); line-height: 1.7;">
+        <main role="main"> 
+          <h1>📖 <span class="highlight-title">Библия для всех</span> — главная</h1>
+          <p>Добро пожаловать! Выберите одну из тем ниже:</p>
+          
+            <ul class="topic-list">
+              <li><a class="button-link" href="prayFromBible.html">🕊 Молитва Господня <em>«Отче наш»</em> c толкование</a></li>
+              <li><a class="button-link" href="golden-verses.html">🌟 Золотые стихи с толкованием</a></li>
+              <li><a class="button-link" href="10-commandments.html">📜 10 заповедей с толкованием</a></li>
+              <li><a class="button-link" href="purpose.html">🎯 Смысл жизни с толкованием</a></li>
+            </ul> 
+        </main> 
+        <hr style="border: none; border-top: 1px solid #ddd; margin-top: 2rem;">
 
-  </header>
-
-  <main class="container">
-    <section>
-      <h2>About Me</h2>
-      <p><strong>Dog Sitter Available!</strong></p>
-      <p>
-        Hi! I'm <strong>Sofia Roginsky</strong>, and I specialize in caring for small dogs (around 10–40 lbs) with love, patience, and lots of cuddles.
-      </p>
-      <ul>
-        <li><strong>Location:</strong> Tiny, in the Bluewater Beach area</li>
-        <li><strong>Home:</strong> Securely fenced backyard for safe outdoor play</li>
-        <li><strong>Daily Routine:</strong> Dogs are walked three times a day</li>
-        <li><strong>Flexible Care:</strong> Available for a few hours, weekends, or extended stays</li>    
-        <li><strong>In-Home Stays:</strong> Also offer in-home stays, caring for your dog in its familiar environment — ideal for pets who prefer staying at home</li> 
-       </ul>
-      <p>Your furry friend will be in good hands with me!</p>
-    </section>
-
-    <section class="photos">
-      <h2>Some of My Happy Guests</h2>
-      <div class="photo-gallery">
-        <!-- Первые 6 фото всегда видны -->
-        <img src="images/dog12.jpg" alt="Dogs with Sopia">
-        <img src="images/dog11.jpg" alt="Dog Cooper">
-        <img src="images/dog6.jpg" alt="Dog Max">
-        <img src="images/dog1.jpg" alt="Small white and black dog">
-        <img src="images/dog2.jpg" alt="Brown fluffy dog smiling">
-        <img src="images/dog3.jpg" alt="Dog wearing a red scarf">
-        <img src="images/dog4.jpg" alt="Small dog on a couch">
-        <img src="images/dog5.jpg" alt="Cute pup with big ears">
-        <img src="images/dog7.jpg" alt="Dog resting in a sunny yard">
-        <div class="wide-photo">
-          <img src="images/dog10.jpg" alt="Three dogs on a couch">
-        </div>
-          <!-- Остальные фото изначально скрыты -->
-          <div class="more-photos hidden">            
-
-            <img src="images/dog8.jpg" alt="Small dog sleeping">
-            <img src="images/dog9.jpg" alt="Dog on the walk">
-          </div>
-      <!-- Кнопка Show More -->
-      <div class="toggle-wrapper">
-        <button onclick="togglePhotos()" id="toggleBtn">📸 Show Gallery</button>
-      </div>
+        <div id="footer"></div> 
+         
     </div>
-    </section>
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Наверх">
+      <img src="images/up-arrow.png" alt="Back to top" />
+    </button>
 
-  <section class="location">
-    <h2>📍 Location</h2>
-    <p>
-      Tiny, Ontario – Bluewater Beach area<br>
-      <a href="#map" class="button">🗺️ View Location</a>
-    </p>
-  </section>
+    <script>
+      fetch('menu.html')
+        .then(res => res.text())
+        .then(html => {
+          const headerDiv = document.getElementById('header');
+          if (headerDiv) {
+            headerDiv.innerHTML = html;
 
-    <div class="share-button">
-      <button onclick="shareSite()">📤 Recommend to a friend</button>
-    </div>
+            // ✅ Теперь элементы точно на странице — можно назначать обработчики
+            const button = document.querySelector('.burger-button');
+            const menu = document.getElementById('burgerMenu');
 
-    <section class="contact">
-      <h2>Contact</h2>
-      <a href="tel:+14169177471">📞 Call Sofia: (416) 917-7471</a>
-      <a href="mailto:emroginsk@gmail.com">✉️ Email: emroginsk@gmail.com</a>
-    </section>
-  
+            function toggleMenu() {
+              if (!menu) return;
+              menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
 
- <section class="intro">
-    <p>We value your feedback! Please leave a testimonial to share your experience with Sofia.</p>
-    <p><a href="testimonial.html" class="button">📝 Leave a Testimonial</a></p>
-  </section>
+            if (button) {
+              button.addEventListener('click', toggleMenu);
+            }
 
-  <section class="testimonials">
-  <h2>Testimonials</h2>
- <blockquote>
-    "If you want your dog to feel like they’re at a 5-star resort, bring them to Sofia! My dog is always excited to visit — it’s like a second home."  
-    <br><strong>– Vlad V.</strong>
-  </blockquote>  
-   <blockquote>
-    "I highly recommend Sofia to anyone looking for a trustworthy and caring pet sitter. She is very responsible, and attentive. She kept me updated, his futures pictures and messages, which gave me peace of mind."  
-    <br><strong>– Anna B.</strong>
-  </blockquote>  
-  <blockquote>
-    "Best responsible dog sitter ever …And you can feel you are more then welcome in her home and my dog feels her love for dogs!!!!"  
-    <br><strong>– Julie H.</strong>
-  </blockquote>  
-  <blockquote>
-    "I know Sofia for many years , she is great with people and dogs. Choosing her for dog sitting will be your great choice."  
-    <br><strong>– Lera M.</strong>
-  </blockquote>    
- <blockquote>
-    "Very responsible and caring sitter. Felt very comfortable leaving Tucker in her care. Will absolutely call Sofia next trip."  
-    <br><strong>– Beverly H.</strong>
-  </blockquote>  
+            document.addEventListener('click', function (e) {
+              if (!menu || !button) return;
+              if (!menu.contains(e.target) && !button.contains(e.target)) {
+                menu.style.display = 'none';
+              }
+            });
 
-  <blockquote>
-    "Sofia, best doggie sitter ever!!!! Thank you so much for taking such good care of Gideon. You are awesome. 🤗❤️💕."  
-    <br><strong>– Ada R.</strong>
-  </blockquote>  
+            // ✅ Переключение языка
+            window.changeLanguage = function(url) {
+              window.location.href = url;
+            };
+          }
+        });
+    </script>
 
-</section>
+    <script src="js/scroll.js"></script>
+    <script src="js/footer-ru.js"></script>
+    <script src="js/share.js" defer></script>
 
-  <section class="map" id="map">
-  <h2>Find Me</h2>
-  <p>I’m located in the Bluewater Beach area of Tiny, Ontario.</p>
-  <p><strong>Exact address is provided after booking.</strong></p>
-  <div class="map-container">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11588.9511582213!2d-79.9947!3d44.5780!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d2a9268e5fb4a6d%3A0x64f8dcde5a83776a!2sBluewater%20Beach!5e0!3m2!1sen!2sca!4v1688878900000!5m2!1sen!2sca"
-      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-</section>
-
-  <footer>
-    <p>&copy; 2025 Sofia's Dog Sitting Service. All rights reserved.</p>
-  </footer>
-
-</main>
-
-<a href="#top" id="back-to-top" style="
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  z-index: 1000;
-">
-  ↑ Back to Top
-</a>
-
-<script>
-function closeAllPopups() {
-  document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
-  document.getElementById('overlay').style.display = 'none';
-}
-
- window.addEventListener('scroll', function() {
-    const backToTop = document.getElementById('back-to-top');
-    if (window.scrollY > 300) {
-      backToTop.style.display = 'block';
-    } else {
-      backToTop.style.display = 'none';
-    }
-  });
-    function showMorePhotos() {
-    const morePhotos = document.querySelector('.more-photos');
-    morePhotos.classList.remove('hidden');
-
-    const button = document.querySelector('.show-more-btn');
-    button.style.display = 'none'; // скрыть кнопку
-  }
-  function togglePhotos() {
-      const morePhotos = document.querySelector('.more-photos');
-      const button = document.getElementById('toggleBtn');
-
-      if (morePhotos.classList.contains('hidden')) {
-        morePhotos.classList.remove('hidden');
-        button.textContent = '📂 Hide Gallery';
-      } else {
-        morePhotos.classList.add('hidden');
-        button.textContent = '📸 Show Gallery';
-      }
-  }
-</script>
-
-<script>
-  function shareSite() {
-    if (navigator.share) {
-      navigator.share({
-        title: "Sofia's Dog Sitting Service",
-        text: "Check out Sofia's loving dog sitting service 🐾",
-        url: window.location.href
-      });
-    } else {
-      alert("Sharing is not supported on this browser.");
-    }
-  }
-</script>
-
- </body>
+</body>
 </html>
-
