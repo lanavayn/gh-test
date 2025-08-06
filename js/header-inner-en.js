@@ -1,21 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Карта из английских страниц в русские
   const pageMapToRussian = {
     "10-commandments-en.html": "10-commandments.html",
     "purpose-en.html": "purpose.html",
     "golden-verses-en.html": "golden-verses.html",
-    "prayFromBible-en.html": "prayFromBible.html",
-    "about-en.html": "about.html"
+    "prayFromBible-en.html": "prayFromBible.html"
   };
 
-  // Получаем текущее имя файла
-  const currentPage = window.location.pathname.split("/").pop();
-  
-  // Ищем русскую версию страницы
-  const russianVersion = pageMapToRussian[currentPage] || null;
+  const currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
+  const russianVersion = pageMapToRussian[currentPage];
 
-  console.log("Текущая страница:", currentPage);
+  console.log("Current Page:", currentPage);
   console.log("Русская версия:", russianVersion);
+
+  if (russianVersion) {
+    const langBtn = document.getElementById("lang-switch");
+    if (langBtn) {
+      langBtn.href = russianVersion;
+    }
+  }
 
   // Вставляем меню
   const headerElement = document.getElementById("header");
@@ -42,20 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
   }
 
-  // Активируем кнопку Share (если она есть)
-  document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("share-button")) {
-      event.preventDefault();
-      if (navigator.share) {
-        navigator.share({
-          title: document.title,
-          url: window.location.href
-        });
-      } else {
-        alert("Sharing not supported in this browser.");
-      }
-    }
-  });
+
 });
 
 
