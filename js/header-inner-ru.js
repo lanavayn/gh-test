@@ -15,11 +15,18 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="top-left dropdown">
        <button class="dropbtn">☰ Выбрать </button>
         <div class="dropdown-content">
-          <a href="index.html">🏠 Главная</a>
-          <a href="about.html">📄 О сайте</a>
-          <a href="#" class="share-button" title="Поделиться">📤 Поделиться</a>
+          <a href="index.html">🏠 Домой</a>
+          <a href="about.html">📄 О нас</a>
+          <a href="#" class="share-button" title="Поделиться">📤 Ссылка</a>
         </div>
-      </div>   
+      </div>  
+      <div class="top-right dropdown">
+        <button class="dropbtn">🌐 Lang</button>
+        <div class="dropdown-content">
+          <a href="${pageMap[currentPage] || 'index-en.html'}">Eng</a>
+          <a href="${currentPage}">Рус</a>
+        </div>
+      </div> 
     </div>
   `;
 });
