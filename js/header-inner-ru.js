@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const pageMapToEnglish = {
     "10-commandments.html": "10-commandments-en.html",
     "purpose.html": "purpose-en.html",
-    "prayFromBible.html": "prayFromBible-en.html",
-    "golden-verses.html": "golden-verses-en.html"
+    "golden-verses.html": "golden-verses-en.html",
+    "prayfrombible.html": "prayFromBible-en.html"
   };
    console.log("📄 Все страницы (pageMapToEnglish):", pageMapToEnglish);
   let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
