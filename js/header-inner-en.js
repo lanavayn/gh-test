@@ -3,10 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     "10-commandments-en.html": "10-commandments.html",
     "purpose-en.html": "purpose.html",
     "golden-verses-en.html": "golden-verses.html",
-    "prayFromBible-en.html": "prayFromBible.html"
+    "prayfrombible-en.html": "prayfrombible.html"
   };
 
-  const currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
+    console.log("📄 Все страницы (pageMapToEnglish):", pageMapToRussian); 
+
+  const currentPage = window.location.pathname.split("/").pop().toLowerCase();
   const russianVersion = pageMapToRussian[currentPage] || null;
 
   console.log("Current Page:", currentPage);
