@@ -6,7 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
     "prayFromBible-en.html": "prayFromBible.html"
   };
 
-  const currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
+  let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
+  if (!currentPage.endsWith('.html')) {
+    currentPage += '.html';
+  }
   const russianVersion = pageMapToRussian[currentPage];
 
   console.log("Current Page:", currentPage);

@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     "about.html": "about-en.html"
   };
 
-  const currentPage = location.pathname.split("/").pop();
+  let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
+  if (!currentPage.endsWith('.html')) {
+    currentPage += '.html';
+  }
   const englishVersion = pageMapToEnglish[currentPage] || null;
 
   console.log("Current Page:", currentPage);
