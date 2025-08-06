@@ -6,13 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
     "golden-verses-en.html": "golden-verses.html"
   };
   
-  console.log("📄 Все страницы (pageMapToEnglish):", pageMapToEnglish);
+  console.log("📄 Все страницы (pageMapToEnglish):", pageMapToRussian);
 
-  let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
-  if (!currentPage.endsWith('.html')) {
-    currentPage += '.html';
-  }
-  const russianVersion = pageMapToEnglish[currentPage];
+  const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+  const russianVersion = pageMapToRussian[currentPage];
 
   console.log("Current Page:", currentPage);
   console.log("Русская версия:", russianVersion);
