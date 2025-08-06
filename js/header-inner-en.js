@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("📄 Все страницы (pageMapToEnglish):", pageMapToRussian);
 
   const currentPage = window.location.pathname.split("/").pop().toLowerCase();
-  const russianVersion = pageMapToRussian[currentPage];
+  const russianVersion = pageMapToRussian[currentPage] || null;
 
   console.log("Current Page:", currentPage);
   console.log("Русская версия:", russianVersion);
