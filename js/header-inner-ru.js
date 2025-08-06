@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "10-commandments.html": "10-commandments-en.html",
     "purpose.html": "purpose-en.html",
     "golden-verses.html": "golden-verses-en.html",
-    "prayfrombible.html": "prayFromBible-en.html"
+    "prayfrombible.html": "prayfrombible-en.html"
   };
    console.log("📄 Все страницы (pageMapToEnglish):", pageMapToEnglish);
   let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);

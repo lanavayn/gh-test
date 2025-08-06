@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "10-commandments-en.html": "10-commandments.html",
     "purpose-en.html": "purpose.html",
     "golden-verses-en.html": "golden-verses.html",
-    "prayfrombible-en.html": "prayFromBible.html" // ключ в lower-case
+    "prayfrombible-en.html": "prayfrombible.html" // ключ в lower-case
     };
   
   console.log("📄 Все страницы (pageMapToEnglish):", pageMapToRussian);
