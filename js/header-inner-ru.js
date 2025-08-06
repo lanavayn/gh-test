@@ -2,10 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const pageMapToEnglish = {
     "10-commandments.html": "10-commandments-en.html",
     "purpose.html": "purpose-en.html",
-    "golden-verses.html": "golden-verses-en.html",
     "prayFromBible.html": "prayFromBible-en.html",
-    "about.html": "about-en.html"
+    "golden-verses.html": "golden-verses-en.html"
   };
+
+  console.log("📄 Все страницы и соответствующие переводы:");
+  for (const [russianPage, englishPage] of Object.entries(pageMapToEnglish)) {
+    console.log(`- ${russianPage} → ${englishPage}`);
+  }
 
   let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
   if (!currentPage.endsWith('.html')) {
