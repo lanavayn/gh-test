@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
     "10-commandments-en.html": "10-commandments.html",
     "purpose-en.html": "purpose.html",
     "golden-verses-en.html": "golden-verses.html",
-    "prayFromBible-en.html": "prayFromBible.html"
+    "prayfrombible-en.html": "prayfrombible.html"
   };
 
   let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
   if (!currentPage.endsWith('.html')) {
     currentPage += '.html';
   }
-  const russianVersion = pageMapToRussian[currentPage];
+  const russianVersion = pageMapToEnglish[currentPage] || null;
 
   console.log("Current Page:", currentPage);
   console.log("Русская версия:", russianVersion);
