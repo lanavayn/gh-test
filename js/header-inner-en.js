@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Получаем текущее имя файла
   const currentPage = window.location.pathname.split("/").pop();
+  
+  console.log("Текущая страница:", currentPage);
+  console.log("Русская версия:", russianVersion);
 
   // Ищем русскую версию страницы
   const russianVersion = pageMapToRussian[currentPage] || null;
@@ -32,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <button class="dropbtn">🌐 Lang</button>
           <div class="dropdown-content">
             <a href="${currentPage}">Eng</a>
-            <a href="${russianVersion || '#'}">Рус</a>
+            <a href="${russianVersion ? russianVersion : '#'}" ${russianVersion ? '' : 'style="pointer-events: none; opacity: 0.5;"'}>Рус</a>
           </div>
         </div>
       </div>
