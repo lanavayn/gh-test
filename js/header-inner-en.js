@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Получаем текущее имя файла
   const currentPage = window.location.pathname.split("/").pop();
   
-  console.log("Текущая страница:", currentPage);
-  console.log("Русская версия:", russianVersion);
-
   // Ищем русскую версию страницы
   const russianVersion = pageMapToRussian[currentPage] || null;
+
+  console.log("Текущая страница:", currentPage);
+  console.log("Русская версия:", russianVersion);
 
   // Вставляем меню
   const headerElement = document.getElementById("header");
