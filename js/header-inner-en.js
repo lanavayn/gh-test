@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Карта из английских файлов в русские
+  // Карта из английских страниц в русские
   const pageMapToRussian = {
     "10-commandments-en.html": "10-commandments.html",
     "purpose-en.html": "purpose.html",
@@ -8,29 +8,51 @@ document.addEventListener("DOMContentLoaded", function () {
     "about-en.html": "about.html"
   };
 
-  const currentPage = location.pathname.split("/").pop();
-  const russianVersion = pageMapToRussian[currentPage];
+  // Получаем текущее имя файла
+  const currentPage = window.location.pathname.split("/").pop();
 
-  document.getElementById("header").innerHTML = `
-    <div class="top-bar">
-      <div class="top-left dropdown">
-        <button class="dropbtn">☰ Select</button>
-        <div class="dropdown-content">
-          <a href="index-en.html">🏠 Home</a>
-          <a href="about-en.html">📄 About</a>
-          <a href="#" class="share-button" title="Share">📤 Share</a>
+  // Ищем русскую версию страницы
+  const russianVersion = pageMapToRussian[currentPage] || null;
+
+  // Вставляем меню
+  const headerElement = document.getElementById("header");
+  if (headerElement) {
+    headerElement.innerHTML = `
+      <div class="top-bar">
+        <div class="top-left dropdown">
+          <button class="dropbtn">☰ Select</button>
+          <div class="dropdown-content">
+            <a href="index-en.html">🏠 Home</a>
+            <a href="about-en.html">📄 About</a>
+            <a href="#" class="share-button" title="Share">📤 Share</a>
+          </div>
+        </div>
+
+        <div class="top-right dropdown">
+          <button class="dropbtn">🌐 Lang</button>
+          <div class="dropdown-content">
+            <a href="${currentPage}">Eng</a>
+            <a href="${russianVersion || '#'}">Рус</a>
+          </div>
         </div>
       </div>
+    `;
+  }
 
-      <div class="top-right dropdown">
-        <button class="dropbtn">🌐 Lang</button>
-        <div class="dropdown-content">
-          <a href="${currentPage}">Eng</a>
-          <a href="${russianVersion || '#'}">Рус</a>
-        </div>
-      </div>
-    </div>
-  `;
+  // Активируем кнопку Share (если она есть)
+  document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("share-button")) {
+      event.preventDefault();
+      if (navigator.share) {
+        navigator.share({
+          title: document.title,
+          url: window.location.href
+        });
+      } else {
+        alert("Sharing not supported in this browser.");
+      }
+    }
+  });
 });
 
 
