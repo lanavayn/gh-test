@@ -6,11 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
     "prayfrombible-en.html": "prayfrombible.html"
   };
 
-    console.log("📄 Все страницы (pageMapToEnglish):", pageMapToRussian); 
+  let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
+  if (!currentPage.endsWith('.html')) {
+    currentPage += '.html';
+  }
 
-  const currentPage = window.location.pathname.split("/").pop().toLowerCase();
   const russianVersion = pageMapToRussian[currentPage] || null;
 
+  console.log("📄 Все страницы (pageMapToRussian):", pageMapToRussian);
   console.log("Current Page:", currentPage);
   console.log("Русская версия:", russianVersion);
 
@@ -38,5 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
   }
 });
+
 
 
