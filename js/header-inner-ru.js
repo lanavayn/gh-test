@@ -5,12 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "prayFromBible.html": "prayFromBible-en.html",
     "golden-verses.html": "golden-verses-en.html"
   };
-
-  console.log("📄 Все страницы и соответствующие переводы:");
-  for (const [russianPage, englishPage] of Object.entries(pageMapToEnglish)) {
-    console.log(`- ${russianPage} → ${englishPage}`);
-  }
-
+   console.log("📄 Все страницы (pageMapToEnglish):", pageMapToEnglish);
   let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
   if (!currentPage.endsWith('.html')) {
     currentPage += '.html';

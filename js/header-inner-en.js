@@ -5,12 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
     "prayFromBible-en.html": "prayFromBible.html",
     "golden-verses-en.html": "golden-verses.html"
   };
+  
+  console.log("📄 Все страницы (pageMapToEnglish):", pageMapToEnglish);
 
   let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
   if (!currentPage.endsWith('.html')) {
     currentPage += '.html';
   }
-  const russianVersion = pageMapToEnglish[currentPage] || null;
+  const russianVersion = pageMapToEnglish[currentPage];
 
   console.log("Current Page:", currentPage);
   console.log("Русская версия:", russianVersion);
