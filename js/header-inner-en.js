@@ -3,18 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
     "10-commandments-en.html": "10-commandments.html",
     "purpose-en.html": "purpose.html",
     "golden-verses-en.html": "golden-verses.html",
-    "prayfrombible-en.html": "prayfrombible.html" // ключ в lower-case
-    };
-  
-  console.log("📄 Все страницы (pageMapToEnglish):", pageMapToRussian);
+    "prayFromBible-en.html": "prayFromBible.html"
+  };
 
-  const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+  const currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
   const russianVersion = pageMapToRussian[currentPage] || null;
 
   console.log("Current Page:", currentPage);
   console.log("Русская версия:", russianVersion);
 
-  // Вставляем меню
   const headerElement = document.getElementById("header");
   if (headerElement) {
     headerElement.innerHTML = `
@@ -38,8 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
   }
-
-
 });
 
 
