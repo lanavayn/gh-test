@@ -8,10 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
     "index-en.html": "index.html"
   };
 
-  let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
-  if (!currentPage.endsWith('.html')) {
+    let currentPage = decodeURIComponent(window.location.pathname.split("/").pop().split("?")[0]);
+
+    if (!currentPage || currentPage === '') {
+    currentPage = 'index_en.html';
+    } else if (!currentPage.endsWith('.html')) {
     currentPage += '.html';
-  }
+    }
 
   const russianVersion = pageMapToRussian[currentPage] || null;
 
