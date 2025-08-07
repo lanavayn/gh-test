@@ -25,8 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
           <button class="dropbtn">☰ Select</button>
           <div class="dropdown-content">
             <a href="index-en.html">🏠 Home</a>
-            <a href="about-en.html">📄 About</a>
+            <a href="comments-en.html">📝 Comments</a>
             <a href="#" class="share-button" title="Share">📤 Share</a>
+            ${currentPage !== 'about-en.html' ? `<a href="about-en.html">📄 О нас</a>` : ''}
           </div>
         </div>
 
